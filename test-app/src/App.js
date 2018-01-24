@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import { csv } from 'd3-request';
 import LineChart from './components/line-chart.js';
+import Table from './components/table.js'
+
+const divStyle = {
+  margin: '10px'
+}
 
 class App extends Component {
   constructor(props) {
@@ -26,11 +31,18 @@ class App extends Component {
       return (
         <div className="App" >
           <div className="container">
+            <h2 style={divStyle}>Birth Rate</h2>
             <div className="row">
-              <div className="col-sm-7">
+              <div className="col-sm-8">
                   <LineChart 
                     data = {this.state.data}
                   />
+              </div>
+              <div className="col-sm-4">
+                  <LineChart 
+                    data = {this.state.data}
+                  />
+                  <Table />
               </div>
             </div>
           </div>

@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis} from 'victory';
 
-const divStyle = {
-  margin: '10px',
-};
-
 export default class LineChart extends Component {
   render() {
     console.log(this.props.data);
     return(
       <div>
-        <h3 style={divStyle}>Birth Rate</h3>
         <VictoryChart theme={VictoryTheme.material} >
         <VictoryAxis dependentAxis
           orientation="left"
