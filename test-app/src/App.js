@@ -3,9 +3,11 @@ import './App.css';
 import { csv } from 'd3-request';
 import LineChart from './components/line-chart.js';
 import Table from './components/table.js'
+import BarChart from './components/bar-chart.js'
 
 const divStyle = {
-  margin: '10px'
+  margin: '10px',
+  padding: '25px 25px 0 25px'
 }
 
 class App extends Component {
@@ -31,7 +33,10 @@ class App extends Component {
       return (
         <div className="App" >
           <div className="container">
-            <h2 style={divStyle}>Birth Rate</h2>
+
+            <h2 style={divStyle}>BIRTH RATE</h2>
+            <p><i>This is a data set of birth rates per country. The full dataset can be found at <a href="https://github.com/vincentarelbundock/Rdatasets/blob/master/csv/HSAUR/birthdeathrates.csv">here</a></i></p>
+            <p>Note: The chosen methods of graphing and the dataset are not connected as this is an exercise attempting to graph categorical data that had a numerical value (because there really no connection between the birthrate of egy and ghana other than their alphabetical ordering)</p>
             <div className="row">
               <div className="col-sm-8">
                   <LineChart 
@@ -39,11 +44,14 @@ class App extends Component {
                   />
               </div>
               <div className="col-sm-4">
-                  <LineChart 
+                  <BarChart 
                     data = {this.state.data}
                   />
-                  <Table />
+                  <Table 
+                    data = {this.state.data}
+                  />
               </div>
+              
             </div>
           </div>
         </div>
