@@ -1,44 +1,55 @@
 import React, { Component } from 'react';
 
 const tableStyle = {
-    height: '100%',
+    height: '250px',
     overflow: 'auto',
 };
 
 export default class Table extends Component {
     render(){
-        console.log("from table " + this.props.data);
-        const numbers = [1, 2, 35];
-        const listItems = numbers.map ((number) => <th key={number.toString()}> {number} </th>); 
-        const listItems2 = numbers.map ((number) => <th key={number.toString()}> {number} </th>); 
+        const rows = [];
+        const rows2 = [];
+        const rows3 = [];
+
+
+    // temporary methods for displaying table data showing tables (need to refactor)
+        if(this.props.data) {
+            (this.props.data.forEach((row) => rows.push(<tr key={row.country}> {row.country} </tr>)));
+         }
+        if(this.props.data) {
+            (this.props.data.forEach((row) => rows2.push(<tr key={row.x.toString()}> {row.x} </tr>)));
+         }
+         if(this.props.data) {
+            (this.props.data.forEach((row) => rows3.push(<tr key={row.y.toString()}> {row.y} </tr>)));
+         }
+        // if (this.props.data) {
+        //     const rowItems = this.props.data.map((row) => console.log(<th key={row.toString()}> {row} </th>));
+        //     };
+
         return (
             <div>
                 <table className="table table-bordered table-striped table-responsive" style={tableStyle}> 
                     <thead>
                         <tr>
                             <th scope="row"></th>
-                            <th>Country</th>
+                            <th style={{color: 'grey'}}>Country</th>
                             <th>Birth Rate</th>
                             <th>Death Rate</th>
                         </tr>
                     </thead>
                     <tbody> 
-                        <tr> 
-                            <th scope="row">1</th>
-                            {listItems}
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            {listItems2}
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            {listItems2}
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            {listItems2}
-                        </tr>
+                        <th></th>
+                        <th>
+                            {rows}
+                        </th>
+                        <th>
+                            {rows2}
+                        </th>
+                        <th>
+                            {rows3}
+                        </th>
+
+
                     </tbody>
 
                 </table>

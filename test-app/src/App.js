@@ -28,15 +28,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.data);
-    console.log(this.state.data);
       return (
         <div className="App" >
           <div className="container">
 
             <h2 style={divStyle}>BIRTH RATE</h2>
             <p><i>This is a data set of birth rates per country. The full dataset can be found at <a href="https://github.com/vincentarelbundock/Rdatasets/blob/master/csv/HSAUR/birthdeathrates.csv">here</a></i></p>
-            <p>Note: The chosen methods of graphing and the dataset are not connected as this is an exercise attempting to graph categorical data that had a numerical value (because there really no connection between the birthrate of egy and ghana other than their alphabetical ordering)</p>
             <div className="row">
               <div className="col-sm-8">
                   <LineChart 
@@ -53,6 +50,7 @@ class App extends Component {
               </div>
               
             </div>
+            <p>Note: The chosen methods of graphing and the dataset are not connected as this is an exercise attempting to graph categorical data that had a numerical value (because there really no connection between the birthrate of egy and ghana other than their alphabetical ordering)</p>
           </div>
         </div>
         

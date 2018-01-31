@@ -3,7 +3,6 @@ import { VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryZoomContai
 
 export default class LineChart extends Component {
   render() {
-    console.log(this.props.data);
     return(
       <div>
         <VictoryChart theme={VictoryTheme.material} 
